@@ -1,5 +1,3 @@
-// lib/presentation/app.dart
-
 import 'package:flash/flash.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -54,9 +52,7 @@ class App extends ConsumerWidget {
 
     return MaterialApp.router(
       scaffoldMessengerKey: rootScaffoldMessengerKey,
-      theme: ThemeData(
-        fontFamily: 'Lato',
-      ),
+      theme: ThemeData(fontFamily: 'Lato'),
       routeInformationParser: AppRouter.router.routeInformationParser,
       routerDelegate: AppRouter.router.routerDelegate,
       debugShowCheckedModeBanner: false,

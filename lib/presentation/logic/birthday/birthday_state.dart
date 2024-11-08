@@ -1,5 +1,3 @@
-// lib/presentation/logic/birthday/birthday_state.dart
-
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'birthday_state.freezed.dart';

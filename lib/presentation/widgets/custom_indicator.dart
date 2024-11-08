@@ -1,5 +1,4 @@
-// lib/presentation/widgets/custom_indicator.dart
-
+import 'package:suppose_test_task/generated/assets/colors.gen.dart';
 import 'package:flutter/material.dart';
 import 'dart:math' as math;
 
@@ -35,7 +34,7 @@ class CustomProgressIndicator extends StatelessWidget {
           Text(
             "${percentage.toInt()}%",
             style: TextStyle(
-              color: const Color(0xFF959595),
+              color: ColorName.silver,
               fontSize: size * 0.3,
               fontWeight: FontWeight.bold,
             ),
@@ -61,17 +60,17 @@ class _ProgressPainter extends CustomPainter {
     final radius = (size.width - strokeWidth) / 2;
 
     final basePaint = Paint()
-      ..color = const Color(0xFF959595)
+      ..color = ColorName.silver
       ..style = PaintingStyle.stroke
       ..strokeWidth = strokeWidth;
 
     canvas.drawCircle(center, radius, basePaint);
 
     final sweepAngle = 2 * math.pi * progress;
-    final startAngle = -math.pi / 2;
+    const startAngle = -math.pi / 2;
 
     final progressPaint = Paint()
-      ..color = Colors.white
+      ..color = ColorName.white
       ..style = PaintingStyle.stroke
       ..strokeWidth = strokeWidth
       ..strokeCap = StrokeCap.round;

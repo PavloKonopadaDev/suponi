@@ -1,5 +1,3 @@
-// lib/presentation/logic/nickname/nickname_state.dart
-
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'nickname_state.freezed.dart';

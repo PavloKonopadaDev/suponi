@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.supono_test_task.app-mergeDebugResources-25:/values-night-v8/values-night-v8.xml",
+            "outputFile": "com.example.supono_test_task.app-mergeDebugResources-29:/values-night-v8/values-night-v8.xml",
             "map": [
                 {
                     "source": "/Users/pavlo/Desktop/development/supono_test_task/android/app/src/main/res/values-night/styles.xml",

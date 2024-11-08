@@ -1,8 +1,6 @@
-// lib/presentation/logic/gender/gender_notifier.dart
-
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:suppose_test_task/data/modela/user_model.dart';
+import 'package:suppose_test_task/data/models/user_model.dart';
 import 'package:suppose_test_task/injector.dart';
 import 'package:suppose_test_task/presentation/router/app_router.dart';
 import 'package:suppose_test_task/presentation/router/route_path.dart';
@@ -21,10 +19,19 @@ final genderProvider = StateNotifierProvider<GenderNotifier, GenderState>(
 );
 
 class GenderNotifier extends StateNotifier<GenderState> {
-  GenderNotifier(this.userBox, this.eventBus) : super(const GenderState());
+  GenderNotifier(this.userBox, this.eventBus) : super(const GenderState()) {
+    _initializeGender();
+  }
 
   final Box<User> userBox;
   final EventBus eventBus;
+
+  void _initializeGender() {
+    final user = userBox.get('currentUser');
+    if (user != null && user.gender.isNotEmpty) {
+      state = state.copyWith(selectedGender: user.gender);
+    }
+  }
 
   void selectGender(String gender) {
     state = state.copyWith(selectedGender: gender);
@@ -44,7 +51,7 @@ class GenderNotifier extends StateNotifier<GenderState> {
       } else {
         final newUser = User(
           name: 'Default Name',
-          birthday: '01/01/2000',
+          birthday: '',
           gender: state.selectedGender ?? "",
           photoPath: null,
         );

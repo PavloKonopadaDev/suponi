@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="transparent">#00000000</color>
+    <!-- White -->
+    <color name="white">#FFFFFF</color>
+    <color name="whiteSecondary">#FAFAFA</color>
+
+    <!-- Black -->
+    <!--    <color name="primaryDefault">#21202E</color>-->
+
+    <!-- Lavender -->
+    <color name="primaryLight">#E5E3FF</color>
+    <color name="primaryDefault">#AAA4FB</color>
+    <color name="secondaryLight">#A4A2B2</color>
+    <color name="lavenderLight">#AAA4FB</color>
+
+    <!-- Red -->
+    <color name="errorDefault">#FE5660</color>
+
+    <!-- Pink -->
+    <color name="errorLight">#FFD2D5</color>
+    <color name="joyfulLilac">#E5D2E5</color>
+    <color name="pinkDividerDark">#D0CEE0</color>
+    <color name="backgroundSecondary">#F8F7FA</color>
+    <color name="whisperPink">#F0FAF8</color>
+    <color name="blushPink">#FAF0F1</color>
+
+
+    <!-- Yellow -->
+    <color name="proDefault">#F6FE56</color>
+    <color name="proLight">#FAFEA5</color>
+
+    <!-- Green -->
+    <color name="mintLight">#C6F5EE</color>
+    <color name="mintDefault">#10E4C1</color>
+    <color name="mintDark">#10A48B</color>
+    <color name="skylar">#73CFC1</color>
+    <color name="pondscape">#DDF1E3</color>
+    <color name="successLight">#E9FFE7</color>
+
+    <!-- Gray -->
+    <color name="secondaryDefault">#403E5B</color>
+    <color name="abbey">#4E5258</color>
+    <color name="greatWhite">#F0F0F5</color>
+    <color name="greatLock">#BCBBC7</color>
+    <color name="textDisabled">#D6D4D9</color>
+    <color name="neutralMedium">#D1D0D9</color>
+    <color name="divider">#E2E1EB</color>
+    <color name="dividerLight">#F6F5FA</color>
+
+    <!-- Black -->
+    <color name="neutralBlack">#18181F</color>
+    <color name="textPrimary">#21202E</color>
+    <color name="textSecondary">#777685</color>
+    <color name="secondary">#2F2D42</color>
+    <color name="dividerDark">#D0CEE0</color>
+    <color name="primaryDark">#6A61EA</color>
+    <color name="primaryDarker">#6A61EA</color>
+    <color name="neutralLight">#E9E9F2</color>
+    <color name="textOnDark">#F5F5F7</color>
+    <color name="secondaryDark">#2F2D42</color>
+    <color name="neutralDark">#3E3D50</color>
+    <color name="black">#000000</color>
+
+    <color name="pinkElephants">#FF9FE9</color>
+    <color name="antiguaSunrise">#FFE6C9</color>
+    <color name="odiousOrange">#FFDEC0</color>
+
+    <color name="rosie">#FFBBCB</color>
+    <color name="sky">#71DDFF</color>
+    <color name="sweetRomance">#FFC3DC</color>
+
+    <!-- Custom -->
+    <color name="silver">#959595</color>
+    <color name="lightWhite">#CCCCCC</color>
+    <color name="transparentWhite">#757575</color>
+    <color name="silverSub">#A6A6A6</color>
+
+
+</resources>

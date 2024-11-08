@@ -33,4 +33,39 @@ class LocalDataSource {
   Future<bool?> getCameraAccessStatus() async {
     return _hiveStoreApi.getCameraAccessStatus();
   }
+
+  Future<void> saveCapturedPhotoPath(String path) {
+    return _hiveStoreApi.saveCapturedPhotoPath(path);
+  }
+
+  String? getCapturedPhotoPath() {
+    return _hiveStoreApi.getCapturedPhotoPath();
+  }
+
+  Future<void> deleteCapturedPhotoPath() {
+    return _hiveStoreApi.deleteCapturedPhotoPath();
+  }
+
+  Future<void> saveDay(String day) => _hiveStoreApi.saveDay(day);
+  String? getDay() => _hiveStoreApi.getDay();
+
+  Future<void> saveMonth(String month) => _hiveStoreApi.saveMonth(month);
+  String? getMonth() => _hiveStoreApi.getMonth();
+
+  Future<void> saveYear(String year) => _hiveStoreApi.saveYear(year);
+  String? getYear() => _hiveStoreApi.getYear();
+
+  Future<void> saveUserName(String userName) {
+    return _hiveStoreApi.saveUserName(userName);
+  }
+
+  String? getUserName() {
+    return _hiveStoreApi.getUserName();
+  }
+
+  Future<void> setIsUnlocked(bool isUnlocked) async {
+    return _hiveStoreApi.setIsUnlocked(isUnlocked);
+  }
+
+  bool get isUnlocked => _hiveStoreApi.isUnlocked ?? false;
 }

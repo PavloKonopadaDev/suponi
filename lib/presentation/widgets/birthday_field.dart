@@ -1,45 +1,52 @@
-// lib/presentation/widgets/birthday_field.dart
-
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:suppose_test_task/generated/assets/colors.gen.dart';
 
-class BirthdayInputField extends StatelessWidget {
+class BirthdayInputField extends StatefulWidget {
   final String label;
   final double width;
   final int maxLength;
   final Function(String) onChanged;
   final bool isValid;
+  final TextEditingController controller;
 
   const BirthdayInputField({
-    Key? key,
+    super.key,
     required this.label,
     required this.width,
     required this.maxLength,
     required this.onChanged,
+    required this.controller,
     this.isValid = true,
-  }) : super(key: key);
+  });
 
+  @override
+  _BirthdayInputFieldState createState() => _BirthdayInputFieldState();
+}
+
+class _BirthdayInputFieldState extends State<BirthdayInputField> {
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
         Container(
-          width: width,
+          width: widget.width,
           height: 67,
           decoration: BoxDecoration(
-            color: Colors.transparent,
+            color: ColorName.transparent,
             border: Border.all(
-              color: isValid ? const Color(0xFF959595) : Colors.red,
+              color: widget.isValid ? ColorName.silver : ColorName.errorDefault,
               width: 2,
             ),
             borderRadius: BorderRadius.circular(8),
           ),
           child: Center(
             child: TextField(
+              controller: widget.controller,
               keyboardType: TextInputType.number,
-              maxLength: maxLength,
+              maxLength: widget.maxLength,
               style: const TextStyle(
-                color: Colors.white,
+                color: ColorName.white,
                 fontSize: 25,
               ),
               textAlign: TextAlign.center,
@@ -47,19 +54,19 @@ class BirthdayInputField extends StatelessWidget {
                 counterText: "",
                 border: InputBorder.none,
               ),
-              onChanged: onChanged,
+              onChanged: widget.onChanged,
               inputFormatters: [
                 FilteringTextInputFormatter.digitsOnly,
-                LengthLimitingTextInputFormatter(maxLength),
+                LengthLimitingTextInputFormatter(widget.maxLength),
               ],
             ),
           ),
         ),
         const SizedBox(height: 8),
         Text(
-          label,
+          widget.label,
           style: TextStyle(
-            color: isValid ? const Color(0xFF959595) : Colors.red,
+            color: widget.isValid ? ColorName.silver : ColorName.errorDefault,
             fontSize: 16,
             fontWeight: FontWeight.w400,
           ),

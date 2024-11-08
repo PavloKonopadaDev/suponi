@@ -1,5 +1,3 @@
-// lib/presentation/event_bus/event_bus.dart
-
 import 'dart:async';
 import 'package:injectable/injectable.dart';
 

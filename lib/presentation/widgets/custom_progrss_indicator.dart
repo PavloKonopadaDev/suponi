@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:suppose_test_task/generated/assets/colors.gen.dart';
 
 class LoadingIndicatorDialog {
   static final LoadingIndicatorDialog _singleton = LoadingIndicatorDialog._internal();
@@ -24,7 +25,7 @@ class LoadingIndicatorDialog {
           return const PopScope(
             canPop: false,
             child: SimpleDialog(
-              backgroundColor: Colors.transparent, //change to my file
+              backgroundColor: ColorName.transparent,
               children: [
                 Center(
                   child: CircularProgressIndicator(),

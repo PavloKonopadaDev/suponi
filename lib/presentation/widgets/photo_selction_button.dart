@@ -1,6 +1,5 @@
-// lib/presentation/widgets/photo_selection_button.dart
-
 import 'package:flutter/material.dart';
+import 'package:suppose_test_task/generated/assets/colors.gen.dart';
 
 class PhotoSelectionButton extends StatelessWidget {
   final String label;
@@ -17,7 +16,7 @@ class PhotoSelectionButton extends StatelessWidget {
     return ElevatedButton(
       onPressed: onTap,
       style: ElevatedButton.styleFrom(
-        backgroundColor: Colors.white,
+        backgroundColor: ColorName.white,
         minimumSize: const Size(343, 50),
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(15),
@@ -26,7 +25,7 @@ class PhotoSelectionButton extends StatelessWidget {
       child: Text(
         label,
         style: const TextStyle(
-          color: Colors.black,
+          color: ColorName.black,
           fontSize: 17,
           fontWeight: FontWeight.w700,
         ),

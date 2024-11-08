@@ -1,7 +1,6 @@
-// lib/presentation/widgets/nickname_field.dart
-
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:suppose_test_task/generated/assets/colors.gen.dart';
 
 class NicknameInputField extends StatelessWidget {
   final String? label;
@@ -9,15 +8,17 @@ class NicknameInputField extends StatelessWidget {
   final int maxLength;
   final Function(String) onChanged;
   final bool isValid;
+  final TextEditingController controller;
 
   const NicknameInputField({
-    Key? key,
+    super.key,
     this.label,
     required this.width,
     required this.maxLength,
     required this.onChanged,
+    required this.controller,
     this.isValid = true,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -25,30 +26,30 @@ class NicknameInputField extends StatelessWidget {
       width: width,
       height: 67,
       decoration: BoxDecoration(
-        color: Colors.transparent,
+        color: ColorName.transparent,
         border: Border.all(
-          color: isValid ? const Color(0xFF959595) : Colors.red,
+          color: isValid ? ColorName.silver : ColorName.errorDefault,
           width: 1,
         ),
         borderRadius: BorderRadius.circular(8),
       ),
       child: TextField(
+        controller: controller,
         keyboardType: TextInputType.text,
         maxLength: maxLength,
         style: const TextStyle(
-          color: Colors.white,
+          color: ColorName.white,
           fontSize: 25,
-          fontFamily: 'Lato',
         ),
         textAlign: TextAlign.left,
+        textAlignVertical: TextAlignVertical.center,
         decoration: InputDecoration(
           counterText: "",
           border: InputBorder.none,
           hintText: label ?? '',
           hintStyle: TextStyle(
-            color: isValid ? const Color(0xFF959595) : Colors.red,
+            color: isValid ? ColorName.silver : ColorName.errorDefault,
             fontSize: 16,
-            fontFamily: 'Lato',
           ),
           contentPadding: const EdgeInsets.symmetric(horizontal: 10),
         ),

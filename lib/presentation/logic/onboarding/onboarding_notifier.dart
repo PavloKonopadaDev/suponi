@@ -1,5 +1,3 @@
-// lib/presentation/logic/onboarding_provider.dart
-
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:suppose_test_task/presentation/event_bus/event_bus.dart';
 import 'package:suppose_test_task/presentation/event_bus/events/app_progress_event_for_toast.dart';
@@ -25,7 +23,6 @@ class OnboardingNotifier extends StateNotifier<OnboardingState> {
 
   Future<void> continueOnboarding() async {
     try {
-      // await localDataSource.setFirstLaunch();
       AppRouter.router.go(RoutePath.birthday);
     } catch (e) {
       state = state.copyWith(hasLoading: false, hasError: true);

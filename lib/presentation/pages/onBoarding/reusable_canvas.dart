@@ -1,6 +1,6 @@
-// lib/presentation/widgets/custom_page.dart
-
 import 'package:flutter/material.dart';
+import 'package:suppose_test_task/generated/assets/colors.gen.dart';
+import 'package:suppose_test_task/presentation/resources/icons.dart';
 import 'package:suppose_test_task/presentation/widgets/custom_indicator.dart';
 
 class CustomPage extends StatelessWidget {
@@ -28,9 +28,9 @@ class CustomPage extends StatelessWidget {
     final bool isFabActive = onFabPressed != null;
 
     return Scaffold(
-      backgroundColor: Colors.black,
+      backgroundColor: ColorName.transparent,
       appBar: AppBar(
-        backgroundColor: Colors.transparent,
+        backgroundColor: ColorName.transparent,
         elevation: 0,
         leading: GestureDetector(
           onTap: onLeadingPressed ??
@@ -40,10 +40,10 @@ class CustomPage extends StatelessWidget {
           child: Container(
             margin: const EdgeInsets.all(8.0),
             decoration: BoxDecoration(
-              color: Colors.transparent,
+              color: ColorName.transparent,
               shape: BoxShape.circle,
               border: Border.all(
-                color: const Color(0xFF959595),
+                color: ColorName.silver,
                 width: 1.0,
               ),
             ),
@@ -84,24 +84,21 @@ class CustomPage extends StatelessWidget {
                     backgroundColor: WidgetStateProperty.resolveWith<Color>(
                       (Set<WidgetState> states) {
                         if (states.contains(WidgetState.disabled)) {
-                          return Colors.grey;
+                          return ColorName.greatLock;
                         }
-                        return Colors.white;
+                        return ColorName.white;
                       },
                     ),
                     padding: WidgetStateProperty.all<EdgeInsets>(EdgeInsets.zero),
                     shape: WidgetStateProperty.all<OutlinedBorder>(
                       const CircleBorder(),
                     ),
-                    elevation: MaterialStateProperty.all<double>(0),
+                    elevation: WidgetStateProperty.all<double>(0),
                   ),
                   child: Center(
-                    child: Icon(
-                      Icons.arrow_forward,
-                      color: isFabActive ? const Color(0xFF959595) : const Color(0xFF757575),
-                      size: 30,
-                    ),
-                  ),
+                      child: IconName.forwardIcon(
+                    color: isFabActive ? ColorName.black : ColorName.transparentWhite,
+                  )),
                 ),
               ),
             )

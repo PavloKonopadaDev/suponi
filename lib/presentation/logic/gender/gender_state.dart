@@ -1,5 +1,3 @@
-// lib/presentation/logic/gender/gender_state.dart
-
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'gender_state.freezed.dart';

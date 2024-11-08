@@ -27,7 +27,8 @@ dependencies:
   freezed_annotation: ^2.4.4
   permission_handler: ^10.0.0
   image_picker: ^0.8.5+3
-#  admob_flutter: ^3.0.0
+  camera: ^0.11.0+2
+
 
   # DB
   hive: ^2.2.3
@@ -37,6 +38,7 @@ dependencies:
 
  # UI
   flash: ^3.1.1
+  flutter_svg: ^2.0.10+1
 
 
 
@@ -55,12 +57,31 @@ dev_dependencies:
   # Generate files > flutter pub run build_runner build --delete-conflicting-outputs
 
 flutter:
+  generate: true
+  assets:
+    - assets/colors/
+    - assets/icons/
+    - assets/fonts/
+    - assets/images/
+    - assets/
+
   fonts:
     - family: Lato
       fonts:
         - asset: assets/fonts/Lato-Light.ttf
           style: italic
+flutter_gen:
+  output: lib/generated/assets/
+  line_length: 100
+  colors:
+    inputs:
+      - assets/colors/colors.xml
 
+  assets:
+    enabled: true
+    outputs:
+      package_parameter_enabled: false
+      class_name: IconAssets
 
   uses-material-design: true
 

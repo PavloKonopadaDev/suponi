@@ -1,11 +1,9 @@
-// lib/presentation/logic/photo/photo_notifier.dart
-
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:hive/hive.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:permission_handler/permission_handler.dart';
-import 'package:suppose_test_task/data/modela/user_model.dart';
+import 'package:suppose_test_task/data/models/user_model.dart';
 import 'package:suppose_test_task/injector.dart';
 import 'package:suppose_test_task/presentation/event_bus/event_bus.dart';
 import 'package:suppose_test_task/presentation/event_bus/events/app_progress_event_for_toast.dart';
@@ -31,6 +29,7 @@ class PhotoNotifier extends StateNotifier<PhotoState> {
     var status = await Permission.camera.status;
     if (status.isGranted) {
       status = await Permission.camera.request();
+
       if (!status.isGranted) {
         ScaffoldMessenger.of(context).showSnackBar(
           const SnackBar(content: Text('Camera permission is required to take photos.')),
@@ -55,7 +54,7 @@ class PhotoNotifier extends StateNotifier<PhotoState> {
         } else {
           final newUser = User(
             name: '',
-            birthday: '01/01/2000',
+            birthday: '',
             gender: 'Unspecified',
             photoPath: image.path,
           );

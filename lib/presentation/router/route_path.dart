@@ -13,7 +13,7 @@ mixin RoutePath {
   // Photo
   static const photo = '/photo';
   static const takePhoto = '$photo/take_photo';
-  static const photoPreview = '$takePhoto/photoPreview';
+  static const photoPreview = '$photo/photoPreview';
 
   // Profile
   static const profile = '/profile';

@@ -24,8 +24,8 @@ typedef TransitionBuilder = Widget Function(
 mixin AppRouter {
   static final navigatorKey = GlobalKey<NavigatorState>(debugLabel: 'navigatorKey');
   static final localDataSource = getIt<LocalDataSource>();
-  static final initialLocation = RoutePath.onBoarding;
-  // localDataSource.isFirstLaunch ? RoutePath.onBoarding : RoutePath.photo;
+  static final initialLocation =
+      localDataSource.isFirstLaunch ? RoutePath.onBoarding : RoutePath.takePhoto;
 
   static final GoRouter router = GoRouter(
     debugLogDiagnostics: true,
@@ -69,17 +69,14 @@ mixin AppRouter {
           GoRoute(
             parentNavigatorKey: navigatorKey,
             name: RoutePath.takePhoto,
-            path: RoutePath.takePhoto,
+            path: RoutePath.getPageName(fullPath: RoutePath.takePhoto),
             builder: (context, state) => const TakePhotoPage(),
           ),
           GoRoute(
             parentNavigatorKey: navigatorKey,
             name: RoutePath.photoPreview,
-            path: RoutePath.photoPreview,
-            pageBuilder: (context, state) => CupertinoPage(
-              key: ValueKey(state.pageKey),
-              child: const PhotoPreviewPage(),
-            ),
+            path: RoutePath.getPageName(fullPath: RoutePath.photoPreview),
+            builder: (context, state) => const PhotoPreviewPage(),
           ),
         ],
       ),

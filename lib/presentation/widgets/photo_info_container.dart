@@ -1,10 +1,10 @@
-// lib/presentation/widgets/photo_info_container.dart
-
 import 'dart:ui';
 import 'package:flutter/material.dart';
+import 'package:suppose_test_task/generated/assets/colors.gen.dart';
+import 'package:suppose_test_task/presentation/resources/icons.dart';
 
 class PhotoInfoContainer extends StatelessWidget {
-  const PhotoInfoContainer({Key? key}) : super(key: key);
+  const PhotoInfoContainer({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -35,9 +35,9 @@ class PhotoInfoContainer extends StatelessWidget {
           width: 343,
           height: 186,
           decoration: BoxDecoration(
-            color: Colors.black.withOpacity(0.2),
+            color: ColorName.black.withOpacity(0.2),
             border: Border.all(
-              color: const Color(0xFF959595),
+              color: ColorName.silver,
               width: 1,
             ),
             borderRadius: BorderRadius.circular(8),
@@ -52,20 +52,17 @@ class PhotoInfoContainer extends StatelessWidget {
                   style: const TextStyle(
                     fontWeight: FontWeight.w800,
                     fontSize: 20,
-                    color: Colors.white,
-                    fontFamily: 'Lato',
+                    color: ColorName.white,
                   ),
                 );
               } else {
                 return Padding(
                   padding: const EdgeInsets.only(top: 8.0),
                   child: Row(
-                    crossAxisAlignment: CrossAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
-                      const Icon(
-                        Icons.check,
-                        color: Color(0xFF959595),
-                        size: 20,
+                      IconName.checkIcon(
+                        color: ColorName.silver,
                       ),
                       const SizedBox(width: 8),
                       Expanded(
@@ -74,8 +71,7 @@ class PhotoInfoContainer extends StatelessWidget {
                           style: const TextStyle(
                             fontWeight: FontWeight.w500,
                             fontSize: 16,
-                            color: Color(0xFF959595),
-                            fontFamily: 'Lato',
+                            color: ColorName.silver,
                           ),
                         ),
                       ),
